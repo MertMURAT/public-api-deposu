@@ -11,7 +11,7 @@
 Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pages.
 
 [![Catalog APIs](https://img.shields.io/badge/catalog-409%20APIs-0a7ea4)](https://apideposu.com/en/catalog)
-[![Turkey-focused APIs](https://img.shields.io/badge/turkey-focused-110%20APIs-dc2626)](./docs/turkey-focused-apis.md)
+[![APIs for Türkiye](https://img.shields.io/badge/T%C3%BCrkiye-110%20APIs-dc2626)](./docs/turkey-focused-apis.md)
 [![Playground Links](https://img.shields.io/badge/playground-393%20links-1f8f5f)](https://apideposu.com/en/playground)
 [![Support](https://img.shields.io/badge/donate-buy%20me%20a%20coffee-ffdd00)](https://buymeacoffee.com/apideposu)
 [![Issues](https://img.shields.io/badge/issues-feedback-d97706)](https://github.com/MertMURAT/public-api-deposu/issues)
@@ -19,13 +19,13 @@ Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pa
 ## Quick Links
 
 - [Open live catalog](https://apideposu.com/en/catalog)
-- <a href="./docs/turkey-focused-apis.md"><img src="./assets/tr-flag-icon.svg" width="18" alt="" /> <strong>Browse Turkey-focused APIs</strong></a>
+- <a href="./docs/turkey-focused-apis.md"><img src="./assets/tr-flag-icon.svg" width="18" alt="" /> <strong>Browse APIs for Türkiye</strong></a>
 - [Open playground](https://apideposu.com/en/playground)
 - [Submit an API](https://apideposu.com/en/submit)
 - [Report an issue](https://github.com/MertMURAT/public-api-deposu/issues)
 - [Buy Me a Coffee](https://buymeacoffee.com/apideposu)
 
-APIs marked with <img src="./assets/tr-flag-icon.svg" width="18" alt="" /> belong to the curated Turkey-focused subset.
+APIs marked with <img src="./assets/tr-flag-icon.svg" width="18" alt="" /> belong to the curated APIs for Türkiye list.
 
 ## Categories
 
