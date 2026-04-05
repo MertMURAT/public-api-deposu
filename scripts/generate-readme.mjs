@@ -74,8 +74,8 @@ function shorten(value, maxLength = 110) {
   return `${clean.slice(0, maxLength - 3).trimEnd()}...`;
 }
 
-function toYesNo(value) {
-  return value ? "Yes" : "No";
+function toOfficialMark(value) {
+  return value ? "&#10003;" : "-";
 }
 
 function foldText(value) {
@@ -167,34 +167,40 @@ function buildLinks(api, playgroundApiIds) {
   const parts = [];
 
   if (api.docsUrl) {
-    parts.push(`[\u{1F4D8} Docs](${api.docsUrl})`);
+    parts.push(`[Docs](${api.docsUrl})`);
   }
 
   if (playgroundApiIds.has(api.id)) {
-    parts.push(`[\u{1F9EA} Test](${testUrl(api.id)})`);
+    parts.push(`[Test](${testUrl(api.id)})`);
   }
 
-  parts.push(`[\u{1F50E} Detail](${detailUrl(api.id)})`);
-  return parts.join("<br>");
+  parts.push(`[Detail](${detailUrl(api.id)})`);
+  return parts.join(" &middot; ");
+}
+
+function buildApiCell(api, playgroundApiIds) {
+  const title = `**${escapeTableCell(api.name)}**`;
+  const links = buildLinks(api, playgroundApiIds);
+  return `${title}<br><sub>${links}</sub>`;
 }
 
 function buildCategorySection(category, apis, playgroundApiIds) {
   const lines = [
     `## ${CATEGORY_LABELS[category] || category}`,
     "",
-    "| API | Description | Auth | Free | Official | Links |",
-    "|:---|:---|:---|:---|:---|:---|",
+    "| API | Description | Auth | Free | Official |",
+    "|:---|:---|:---|:---|:---:|",
   ];
 
   for (const api of sortApis(apis)) {
+    const apiCell = buildApiCell(api, playgroundApiIds);
     const description = shorten(api.summary?.en || api.summary?.tr || api.name);
     const auth = normalizeAuth(api.auth);
     const freeTier = FREE_TIER_LABELS[api.freeTier] || "Unknown";
-    const official = toYesNo(api.official);
-    const links = buildLinks(api, playgroundApiIds);
+    const official = toOfficialMark(api.official);
 
     lines.push(
-      `| ${escapeTableCell(api.name)} | ${description} | ${auth} | ${freeTier} | ${official} | ${links} |`,
+      `| ${apiCell} | ${description} | ${auth} | ${freeTier} | ${official} |`,
     );
   }
 
@@ -221,7 +227,7 @@ function buildReadme(apis, playgroundApiIds) {
     "",
     "A generated discovery surface for the live API Deposu catalog.",
     "",
-    "The source of truth stays in the API Deposu backend. This repository publishes a GitHub-friendly table view with docs, test, and detail links.",
+    "The source of truth stays in the API Deposu backend. This repository publishes a GitHub-friendly table view with inline docs, test, and detail links.",
     "",
     `[![Catalog APIs](${buildBadge("catalog", `${apis.length} APIs`, "0a7ea4")})](${siteUrl("/catalog")})`,
     `[![Playground Links](${buildBadge("playground", `${playgroundApiIds.size} links`, "1f8f5f")})](${siteUrl("/playground")})`,
@@ -243,7 +249,7 @@ function buildReadme(apis, playgroundApiIds) {
     "## How To Use",
     "",
     "1. Find an API in the category tables below.",
-    "2. Open `Docs` for the provider source and `Detail` for API Deposu context.",
+    "2. Use the inline `Docs`, `Test`, and `Detail` links under each API name.",
     "3. Use `Test` when a public playground config exists.",
     "",
     "## What You Get",
