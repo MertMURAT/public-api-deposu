@@ -198,14 +198,14 @@ function buildLinks(api, playgroundApiIds) {
   return parts.join(" &middot; ");
 }
 
-function buildTurkeyFocusedIcon() {
-  return `<img src="${TURKEY_FOCUSED_ICON_PATH}" width="14" alt="" />`;
+function buildTurkeyFocusedIcon(size = 16) {
+  return `<img src="${TURKEY_FOCUSED_ICON_PATH}" width="${size}" alt="" />`;
 }
 
 function buildApiCell(api, playgroundApiIds, options = {}) {
   const isTurkeyFocused = options.turkeyFocusedApiIds?.has(api.id);
   const title = isTurkeyFocused
-    ? `**${escapeTableCell(api.name)}** ${buildTurkeyFocusedIcon()}`
+    ? `${buildTurkeyFocusedIcon(16)} **${escapeTableCell(api.name)}**`
     : `**${escapeTableCell(api.name)}**`;
   const links = buildLinks(api, playgroundApiIds);
   return `${title}<br><sub>${links}</sub>`;
@@ -263,13 +263,13 @@ function buildReadme(apis, playgroundApiIds, turkeyFocusedApiIds) {
     "## Quick Links",
     "",
     `- [Open live catalog](${siteUrl("/catalog")})`,
-    `- <a href="${TURKEY_FOCUSED_DOCS_LINK}">${buildTurkeyFocusedIcon()} <strong>Browse Turkey-focused APIs</strong></a>`,
+    `- <a href="${TURKEY_FOCUSED_DOCS_LINK}">${buildTurkeyFocusedIcon(18)} <strong>Browse Turkey-focused APIs</strong></a>`,
     `- [Open playground](${siteUrl("/playground")})`,
     `- [Submit an API](${siteUrl("/submit")})`,
     `- [Report an issue](${ISSUES_URL})`,
     `- [Buy Me a Coffee](${donateUrl})`,
     "",
-    `APIs marked with ${buildTurkeyFocusedIcon()} belong to the curated Turkey-focused subset.`,
+    `APIs marked with ${buildTurkeyFocusedIcon(18)} belong to the curated Turkey-focused subset.`,
     "",
     "## Categories",
     "",
