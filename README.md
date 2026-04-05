@@ -8,54 +8,20 @@
 
 # API Deposu Public Catalog
 
-A public API catalog for developers.
-
 Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pages.
 
 [![Catalog APIs](https://img.shields.io/badge/catalog-409%20APIs-0a7ea4)](https://apideposu.com/en/catalog)
 [![Playground Links](https://img.shields.io/badge/playground-393%20links-1f8f5f)](https://apideposu.com/en/playground)
 [![Support](https://img.shields.io/badge/donate-buy%20me%20a%20coffee-ffdd00)](https://buymeacoffee.com/apideposu)
-[![Sync](https://img.shields.io/badge/sync-daily-555555)](https://github.com/MertMURAT/public-api-deposu/actions/workflows/sync-readme.yml)
 [![Issues](https://img.shields.io/badge/issues-feedback-d97706)](https://github.com/MertMURAT/public-api-deposu/issues)
 
 ## Quick Links
 
 - [Open live catalog](https://apideposu.com/en/catalog)
 - [Open playground](https://apideposu.com/en/playground)
-- [Donate / Buy Me a Coffee](https://buymeacoffee.com/apideposu)
 - [Submit an API](https://apideposu.com/en/submit)
-- [Support](https://apideposu.com/en/support)
 - [Report an issue](https://github.com/MertMURAT/public-api-deposu/issues)
-- [Contributing Guide](./CONTRIBUTING.md)
-- [License](./LICENSE)
-
-## How To Use
-
-1. Find an API in the category tables below.
-2. Use the inline `Docs`, `Test`, and `Detail` links under each API name.
-3. Use `Test` when a public playground config exists.
-
-## What You Get
-
-- 409 live catalog entries
-- 393 public test/playground links
-- Category-based discovery
-- Official documentation links
-- Detail pages on API Deposu
-
-## Contribute
-
-- Read the repository contribution rules in [CONTRIBUTING.md](./CONTRIBUTING.md).
-- Use [Submit an API](https://apideposu.com/en/submit) to send a new source for review.
-- Use [GitHub issues](https://github.com/MertMURAT/public-api-deposu/issues) for table bugs, broken links, and README feedback.
-- Use [Support](https://apideposu.com/en/support) for product-side questions.
-
-## Support The Project
-
-If this catalog saves you time, you can support maintenance and new curation work with a donation.
-
 - [Buy Me a Coffee](https://buymeacoffee.com/apideposu)
-- [API Deposu support page](https://apideposu.com/en/support)
 
 ## Categories
 
@@ -552,6 +518,24 @@ If this catalog saves you time, you can support maintenance and new curation wor
 | **Softwium Fake API**<br><sub>[Docs](https://softwium.com/fake-api/) &middot; [Test](https://apideposu.com/en/playground?api=softwium-fake-api) &middot; [Detail](https://apideposu.com/en/catalog/softwium-fake-api)</sub> | Free fake REST API providing books, currencies, peoples, and Pokemon data for testing and prototyping. Incl... | No | Free | - |
 | **SQLable**<br><sub>[Docs](https://sqlable.com/validator) &middot; [Test](https://apideposu.com/en/playground?api=sqlable) &middot; [Detail](https://apideposu.com/en/catalog/sqlable)</sub> | A SQL syntax validation API. Check your SQL queries for syntax errors. Returns error token, line, and colum... | No | Free | - |
 | **Yamline**<br><sub>[Docs](https://yamline.com/k8s/) &middot; [Test](https://apideposu.com/en/playground?api=yamline) &middot; [Detail](https://apideposu.com/en/catalog/yamline)</sub> | A Kubernetes manifest validation API. Validates K8s manifests in YAML format against official Kubernetes Op... | No | Free | - |
+
+## Contribute
+
+- Read the repository contribution rules in [CONTRIBUTING.md](./CONTRIBUTING.md).
+- Use [Submit an API](https://apideposu.com/en/submit) to send a new source for review.
+- Use [GitHub issues](https://github.com/MertMURAT/public-api-deposu/issues) for table bugs, broken links, and README feedback.
+- Use [API Deposu support page](https://apideposu.com/en/support) for product-side questions.
+
+## Support The Project
+
+If this catalog saves you time, you can support maintenance and new curation work with a donation.
+
+- [Buy Me a Coffee](https://buymeacoffee.com/apideposu)
+
+## Project Files
+
+- [Contributing Guide](./CONTRIBUTING.md)
+- [License](./LICENSE)
 
 ## Notes
 

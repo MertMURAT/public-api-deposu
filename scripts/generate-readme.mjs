@@ -225,54 +225,20 @@ function buildReadme(apis, playgroundApiIds) {
     "",
     "# API Deposu Public Catalog",
     "",
-    "A public API catalog for developers.",
-    "",
     "Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pages.",
     "",
     `[![Catalog APIs](${buildBadge("catalog", `${apis.length} APIs`, "0a7ea4")})](${siteUrl("/catalog")})`,
     `[![Playground Links](${buildBadge("playground", `${playgroundApiIds.size} links`, "1f8f5f")})](${siteUrl("/playground")})`,
     `[![Support](${buildBadge("donate", "buy me a coffee", "ffdd00")})](${donateUrl})`,
-    `[![Sync](${buildBadge("sync", "daily", "555555")})](${REPO_URL}/actions/workflows/sync-readme.yml)`,
     `[![Issues](${buildBadge("issues", "feedback", "d97706")})](${ISSUES_URL})`,
     "",
     "## Quick Links",
     "",
     `- [Open live catalog](${siteUrl("/catalog")})`,
     `- [Open playground](${siteUrl("/playground")})`,
-    `- [Donate / Buy Me a Coffee](${donateUrl})`,
     `- [Submit an API](${siteUrl("/submit")})`,
-    `- [Support](${siteUrl("/support")})`,
     `- [Report an issue](${ISSUES_URL})`,
-    "- [Contributing Guide](./CONTRIBUTING.md)",
-    "- [License](./LICENSE)",
-    "",
-    "## How To Use",
-    "",
-    "1. Find an API in the category tables below.",
-    "2. Use the inline `Docs`, `Test`, and `Detail` links under each API name.",
-    "3. Use `Test` when a public playground config exists.",
-    "",
-    "## What You Get",
-    "",
-    `- ${apis.length} live catalog entries`,
-    `- ${playgroundApiIds.size} public test/playground links`,
-    "- Category-based discovery",
-    "- Official documentation links",
-    "- Detail pages on API Deposu",
-    "",
-    "## Contribute",
-    "",
-    "- Read the repository contribution rules in [CONTRIBUTING.md](./CONTRIBUTING.md).",
-    `- Use [Submit an API](${siteUrl("/submit")}) to send a new source for review.`,
-    `- Use [GitHub issues](${ISSUES_URL}) for table bugs, broken links, and README feedback.`,
-    `- Use [Support](${siteUrl("/support")}) for product-side questions.`,
-    "",
-    "## Support The Project",
-    "",
-    "If this catalog saves you time, you can support maintenance and new curation work with a donation.",
-    "",
     `- [Buy Me a Coffee](${donateUrl})`,
-    `- [API Deposu support page](${siteUrl("/support")})`,
     "",
     "## Categories",
     "",
@@ -289,6 +255,24 @@ function buildReadme(apis, playgroundApiIds) {
     const categoryApis = apis.filter((api) => api.category === category);
     lines.push(buildCategorySection(category, categoryApis, playgroundApiIds));
   }
+
+  lines.push("## Contribute", "");
+  lines.push("- Read the repository contribution rules in [CONTRIBUTING.md](./CONTRIBUTING.md).");
+  lines.push(`- Use [Submit an API](${siteUrl("/submit")}) to send a new source for review.`);
+  lines.push(`- Use [GitHub issues](${ISSUES_URL}) for table bugs, broken links, and README feedback.`);
+  lines.push(`- Use [API Deposu support page](${siteUrl("/support")}) for product-side questions.`);
+  lines.push("");
+
+  lines.push("## Support The Project", "");
+  lines.push("If this catalog saves you time, you can support maintenance and new curation work with a donation.");
+  lines.push("");
+  lines.push(`- [Buy Me a Coffee](${donateUrl})`);
+  lines.push("");
+
+  lines.push("## Project Files", "");
+  lines.push("- [Contributing Guide](./CONTRIBUTING.md)");
+  lines.push("- [License](./LICENSE)");
+  lines.push("");
 
   lines.push("## Notes", "");
   lines.push("- This README is generated from `GET /catalog/apis` and `GET /catalog/playground`.");
