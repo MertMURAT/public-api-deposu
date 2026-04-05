@@ -1,0 +1,12 @@
+{
+  "name": "public-api-deposu",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:readme": "node scripts/generate-readme.mjs",
+    "verify:no-secrets": "node scripts/verify-no-secrets.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
