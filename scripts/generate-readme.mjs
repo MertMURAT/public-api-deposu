@@ -20,6 +20,7 @@ const TURKEY_FOCUSED_DOCS_PATH = path.join(DOCS_DIR, "turkey-focused-apis.md");
 const TURKEY_FOCUSED_DOCS_LINK = "./docs/turkey-focused-apis.md";
 const TURKEY_FOCUSED_IDS_PATH = path.join(repoRoot, "scripts", "data", "turkey-focused-api-ids.json");
 const TURKIYE_LABEL = "APIs for Türkiye";
+const TURKIYE_BADGE_LABEL = "Turkiye";
 
 const CATEGORY_ORDER = [
   "public",
@@ -256,7 +257,7 @@ function buildReadme(apis, playgroundApiIds, turkeyFocusedApiIds) {
     "Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pages.",
     "",
     `[![Catalog APIs](${buildBadge("catalog", `${apis.length} APIs`, "0a7ea4")})](${siteUrl("/catalog")})`,
-    `[![${TURKIYE_LABEL}](${buildBadge("Türkiye", `${turkeyFocusedApiIds.size} APIs`, "dc2626")})](${TURKEY_FOCUSED_DOCS_LINK})`,
+    `[![${TURKIYE_LABEL}](${buildBadge(TURKIYE_BADGE_LABEL, `${turkeyFocusedApiIds.size} APIs`, "dc2626")})](${TURKEY_FOCUSED_DOCS_LINK})`,
     `[![Playground Links](${buildBadge("playground", `${playgroundApiIds.size} links`, "1f8f5f")})](${siteUrl("/playground")})`,
     `[![Support](${buildBadge("donate", "buy me a coffee", "ffdd00")})](${donateUrl})`,
     `[![Issues](${buildBadge("issues", "feedback", "d97706")})](${ISSUES_URL})`,
@@ -328,7 +329,7 @@ function buildTurkeyFocusedDocs(apis, playgroundApiIds, turkeyFocusedApiIds) {
     "",
     "A curated list of APIs from the main catalog that directly target Turkish institutions, companies, or Türkiye-specific data and products.",
     "",
-    `[![${TURKIYE_LABEL}](${buildBadge("Türkiye", `${turkeyFocusedApis.length} APIs`, "dc2626")})](./turkey-focused-apis.md)`,
+    `[![${TURKIYE_LABEL}](${buildBadge(TURKIYE_BADGE_LABEL, `${turkeyFocusedApis.length} APIs`, "dc2626")})](./turkey-focused-apis.md)`,
     `[![Main Catalog](${buildBadge("catalog", `${apis.length} APIs`, "0a7ea4")})](../README.md)`,
     `[![Playground Links](${buildBadge("playground", `${playgroundApiIds.size} links`, "1f8f5f")})](${siteUrl("/playground")})`,
     "",

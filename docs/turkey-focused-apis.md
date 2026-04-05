@@ -4,7 +4,7 @@
 
 A curated list of APIs from the main catalog that directly target Turkish institutions, companies, or Türkiye-specific data and products.
 
-[![APIs for Türkiye](https://img.shields.io/badge/T%C3%BCrkiye-110%20APIs-dc2626)](./turkey-focused-apis.md)
+[![APIs for Türkiye](https://img.shields.io/badge/Turkiye-110%20APIs-dc2626)](./turkey-focused-apis.md)
 [![Main Catalog](https://img.shields.io/badge/catalog-409%20APIs-0a7ea4)](../README.md)
 [![Playground Links](https://img.shields.io/badge/playground-393%20links-1f8f5f)](https://apideposu.com/en/playground)
 
