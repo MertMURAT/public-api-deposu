@@ -8,9 +8,9 @@
 
 # API Deposu Public Catalog
 
-A generated discovery surface for the live API Deposu catalog.
+A public API catalog for developers.
 
-The source of truth stays in the API Deposu backend. This repository publishes a GitHub-friendly table view with inline docs, test, and detail links.
+Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pages.
 
 [![Catalog APIs](https://img.shields.io/badge/catalog-409%20APIs-0a7ea4)](https://apideposu.com/en/catalog)
 [![Playground Links](https://img.shields.io/badge/playground-393%20links-1f8f5f)](https://apideposu.com/en/playground)
@@ -56,20 +56,6 @@ If this catalog saves you time, you can support maintenance and new curation wor
 
 - [Buy Me a Coffee](https://buymeacoffee.com/apideposu)
 - [API Deposu support page](https://apideposu.com/en/support)
-
-## Generate
-
-```bash
-npm run generate:readme
-```
-
-Optional environment variables:
-
-- `CATALOG_API_BASE` default: `https://api.apideposu.com`
-- `SITE_BASE_URL` default: `https://apideposu.com`
-- `SITE_LOCALE` default: `en`
-- `REPO_URL` default: `https://github.com/MertMURAT/public-api-deposu`
-- `DONATE_URL` fixed: `https://buymeacoffee.com/apideposu`
 
 ## Categories
 
