@@ -175,7 +175,7 @@ function buildLinks(api, playgroundApiIds) {
   }
 
   parts.push(`[\u{1F50E} Detail](${detailUrl(api.id)})`);
-  return parts.join(" / ");
+  return parts.join("<br>");
 }
 
 function buildCategorySection(category, apis, playgroundApiIds) {
