@@ -13,6 +13,7 @@ const REPO_URL = (process.env.REPO_URL || "https://github.com/MertMURAT/public-a
 const ISSUES_URL = `${REPO_URL}/issues`;
 const DONATE_URL = "https://buymeacoffee.com/apideposu";
 const APP_ICON_PATH = "./assets/app-icon.png";
+const TURKEY_FOCUSED_ICON_PATH = "./assets/tr-flag-icon.svg";
 const README_PATH = path.join(repoRoot, "README.md");
 const DOCS_DIR = path.join(repoRoot, "docs");
 const TURKEY_FOCUSED_DOCS_PATH = path.join(DOCS_DIR, "turkey-focused-apis.md");
@@ -197,10 +198,14 @@ function buildLinks(api, playgroundApiIds) {
   return parts.join(" &middot; ");
 }
 
+function buildTurkeyFocusedIcon() {
+  return `<img src="${TURKEY_FOCUSED_ICON_PATH}" width="14" alt="" />`;
+}
+
 function buildApiCell(api, playgroundApiIds, options = {}) {
   const isTurkeyFocused = options.turkeyFocusedApiIds?.has(api.id);
   const title = isTurkeyFocused
-    ? `**${escapeTableCell(api.name)}** <sup>🇹🇷 TR</sup>`
+    ? `**${escapeTableCell(api.name)}** ${buildTurkeyFocusedIcon()}`
     : `**${escapeTableCell(api.name)}**`;
   const links = buildLinks(api, playgroundApiIds);
   return `${title}<br><sub>${links}</sub>`;
@@ -258,13 +263,13 @@ function buildReadme(apis, playgroundApiIds, turkeyFocusedApiIds) {
     "## Quick Links",
     "",
     `- [Open live catalog](${siteUrl("/catalog")})`,
-    `- [🇹🇷 Browse Turkey-focused APIs](${TURKEY_FOCUSED_DOCS_LINK})`,
+    `- <a href="${TURKEY_FOCUSED_DOCS_LINK}">${buildTurkeyFocusedIcon()} <strong>Browse Turkey-focused APIs</strong></a>`,
     `- [Open playground](${siteUrl("/playground")})`,
     `- [Submit an API](${siteUrl("/submit")})`,
     `- [Report an issue](${ISSUES_URL})`,
     `- [Buy Me a Coffee](${donateUrl})`,
     "",
-    "APIs marked with <sup>🇹🇷 TR</sup> belong to the curated Turkey-focused subset.",
+    `APIs marked with ${buildTurkeyFocusedIcon()} belong to the curated Turkey-focused subset.`,
     "",
     "## Categories",
     "",
