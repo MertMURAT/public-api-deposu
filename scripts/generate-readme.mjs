@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -14,6 +14,10 @@ const ISSUES_URL = `${REPO_URL}/issues`;
 const DONATE_URL = "https://buymeacoffee.com/apideposu";
 const APP_ICON_PATH = "./assets/app-icon.png";
 const README_PATH = path.join(repoRoot, "README.md");
+const DOCS_DIR = path.join(repoRoot, "docs");
+const TURKEY_FOCUSED_DOCS_PATH = path.join(DOCS_DIR, "turkey-focused-apis.md");
+const TURKEY_FOCUSED_DOCS_LINK = "./docs/turkey-focused-apis.md";
+const TURKEY_FOCUSED_IDS_PATH = path.join(repoRoot, "scripts", "data", "turkey-focused-api-ids.json");
 
 const CATEGORY_ORDER = [
   "public",
@@ -163,6 +167,21 @@ function sortApis(apis) {
   return [...apis].sort((left, right) => left.name.localeCompare(right.name, "en"));
 }
 
+async function loadTurkeyFocusedApiIds() {
+  const raw = await readFile(TURKEY_FOCUSED_IDS_PATH, "utf8");
+  const parsed = JSON.parse(raw);
+
+  if (!Array.isArray(parsed)) {
+    throw new Error("Turkey-focused API ID file must be a JSON array.");
+  }
+
+  return [...new Set(
+    parsed
+      .map((value) => (typeof value === "string" ? value.trim() : ""))
+      .filter(Boolean),
+  )];
+}
+
 function buildLinks(api, playgroundApiIds) {
   const parts = [];
 
@@ -178,13 +197,16 @@ function buildLinks(api, playgroundApiIds) {
   return parts.join(" &middot; ");
 }
 
-function buildApiCell(api, playgroundApiIds) {
-  const title = `**${escapeTableCell(api.name)}**`;
+function buildApiCell(api, playgroundApiIds, options = {}) {
+  const isTurkeyFocused = options.turkeyFocusedApiIds?.has(api.id);
+  const title = isTurkeyFocused
+    ? `**${escapeTableCell(api.name)}** <sup>🇹🇷 TR</sup>`
+    : `**${escapeTableCell(api.name)}**`;
   const links = buildLinks(api, playgroundApiIds);
   return `${title}<br><sub>${links}</sub>`;
 }
 
-function buildCategorySection(category, apis, playgroundApiIds) {
+function buildCategorySection(category, apis, playgroundApiIds, options = {}) {
   const lines = [
     `## ${CATEGORY_LABELS[category] || category}`,
     "",
@@ -193,7 +215,7 @@ function buildCategorySection(category, apis, playgroundApiIds) {
   ];
 
   for (const api of sortApis(apis)) {
-    const apiCell = buildApiCell(api, playgroundApiIds);
+    const apiCell = buildApiCell(api, playgroundApiIds, options);
     const description = shorten(api.summary?.en || api.summary?.tr || api.name);
     const auth = normalizeAuth(api.auth);
     const freeTier = FREE_TIER_LABELS[api.freeTier] || "Unknown";
@@ -208,7 +230,7 @@ function buildCategorySection(category, apis, playgroundApiIds) {
   return lines.join("\n");
 }
 
-function buildReadme(apis, playgroundApiIds) {
+function buildReadme(apis, playgroundApiIds, turkeyFocusedApiIds) {
   const categoriesWithApis = CATEGORY_ORDER.filter((category) =>
     apis.some((api) => api.category === category),
   );
@@ -228,6 +250,7 @@ function buildReadme(apis, playgroundApiIds) {
     "Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pages.",
     "",
     `[![Catalog APIs](${buildBadge("catalog", `${apis.length} APIs`, "0a7ea4")})](${siteUrl("/catalog")})`,
+    `[![Turkey-focused APIs](${buildBadge("turkey-focused", `${turkeyFocusedApiIds.size} APIs`, "dc2626")})](${TURKEY_FOCUSED_DOCS_LINK})`,
     `[![Playground Links](${buildBadge("playground", `${playgroundApiIds.size} links`, "1f8f5f")})](${siteUrl("/playground")})`,
     `[![Support](${buildBadge("donate", "buy me a coffee", "ffdd00")})](${donateUrl})`,
     `[![Issues](${buildBadge("issues", "feedback", "d97706")})](${ISSUES_URL})`,
@@ -235,10 +258,13 @@ function buildReadme(apis, playgroundApiIds) {
     "## Quick Links",
     "",
     `- [Open live catalog](${siteUrl("/catalog")})`,
+    `- [🇹🇷 Browse Turkey-focused APIs](${TURKEY_FOCUSED_DOCS_LINK})`,
     `- [Open playground](${siteUrl("/playground")})`,
     `- [Submit an API](${siteUrl("/submit")})`,
     `- [Report an issue](${ISSUES_URL})`,
     `- [Buy Me a Coffee](${donateUrl})`,
+    "",
+    "APIs marked with <sup>🇹🇷 TR</sup> belong to the curated Turkey-focused subset.",
     "",
     "## Categories",
     "",
@@ -253,7 +279,7 @@ function buildReadme(apis, playgroundApiIds) {
 
   for (const category of categoriesWithApis) {
     const categoryApis = apis.filter((api) => api.category === category);
-    lines.push(buildCategorySection(category, categoryApis, playgroundApiIds));
+    lines.push(buildCategorySection(category, categoryApis, playgroundApiIds, { turkeyFocusedApiIds }));
   }
 
   lines.push("## Contribute", "");
@@ -283,7 +309,57 @@ function buildReadme(apis, playgroundApiIds) {
   return lines.join("\n");
 }
 
+function buildTurkeyFocusedDocs(apis, playgroundApiIds, turkeyFocusedApiIds) {
+  const turkeyFocusedApis = apis.filter((api) => turkeyFocusedApiIds.has(api.id));
+  const categoriesWithApis = CATEGORY_ORDER.filter((category) =>
+    turkeyFocusedApis.some((api) => api.category === category),
+  );
+
+  const lines = [
+    "<!-- This file is generated by scripts/generate-readme.mjs. Do not edit by hand. -->",
+    "",
+    "# Turkey-focused APIs",
+    "",
+    "A curated list of APIs from the main catalog that directly target Turkish institutions, companies, or Turkey-specific data and products.",
+    "",
+    `[![Turkey-focused APIs](${buildBadge("turkey-focused", `${turkeyFocusedApis.length} APIs`, "dc2626")})](./turkey-focused-apis.md)`,
+    `[![Main Catalog](${buildBadge("catalog", `${apis.length} APIs`, "0a7ea4")})](../README.md)`,
+    `[![Playground Links](${buildBadge("playground", `${playgroundApiIds.size} links`, "1f8f5f")})](${siteUrl("/playground")})`,
+    "",
+    "## Quick Links",
+    "",
+    "- [Back to main README](../README.md)",
+    `- [Open live catalog](${siteUrl("/catalog")})`,
+    `- [Open playground](${siteUrl("/playground")})`,
+    `- [Submit an API](${siteUrl("/submit")})`,
+    "",
+    "## Categories",
+    "",
+  ];
+
+  for (const category of categoriesWithApis) {
+    const count = turkeyFocusedApis.filter((api) => api.category === category).length;
+    lines.push(`- [${CATEGORY_LABELS[category] || category} (${count})](#${categoryAnchor(category)})`);
+  }
+
+  lines.push("");
+
+  for (const category of categoriesWithApis) {
+    const categoryApis = turkeyFocusedApis.filter((api) => api.category === category);
+    lines.push(buildCategorySection(category, categoryApis, playgroundApiIds));
+  }
+
+  lines.push("## Notes", "");
+  lines.push("- This page is a curated subset of the public catalog.");
+  lines.push("- The main README keeps all categories in one place; this page highlights the Turkey-focused slice only.");
+  lines.push("- Descriptions stay short here. Use the detail pages for full notes and context.");
+  lines.push("");
+
+  return lines.join("\n");
+}
+
 async function main() {
+  const turkeyFocusedApiIds = await loadTurkeyFocusedApiIds();
   const [apis, playground] = await Promise.all([
     getJson(`${CATALOG_API_BASE}/catalog/apis?limit=500`),
     getJson(`${CATALOG_API_BASE}/catalog/playground`),
@@ -303,11 +379,29 @@ async function main() {
       .filter((apiId) => typeof apiId === "string" && apiId.trim()),
   );
 
-  const readme = buildReadme(apis, playgroundApiIds);
+  const apiIds = new Set(
+    apis
+      .map((api) => api?.id)
+      .filter((apiId) => typeof apiId === "string" && apiId.trim()),
+  );
+  const missingTurkeyFocusedApiIds = turkeyFocusedApiIds.filter((apiId) => !apiIds.has(apiId));
+
+  if (missingTurkeyFocusedApiIds.length > 0) {
+    throw new Error(
+      `Turkey-focused API IDs not found in live catalog: ${missingTurkeyFocusedApiIds.join(", ")}`,
+    );
+  }
+
+  const turkeyFocusedApiIdSet = new Set(turkeyFocusedApiIds);
+  const readme = buildReadme(apis, playgroundApiIds, turkeyFocusedApiIdSet);
+  const turkeyFocusedDocs = buildTurkeyFocusedDocs(apis, playgroundApiIds, turkeyFocusedApiIdSet);
+
+  await mkdir(DOCS_DIR, { recursive: true });
   await writeFile(README_PATH, `${readme}\n`, "utf8");
+  await writeFile(TURKEY_FOCUSED_DOCS_PATH, `${turkeyFocusedDocs}\n`, "utf8");
 
   console.log(
-    `[generate:readme] README updated with ${apis.length} APIs and ${playgroundApiIds.size} playground links.`,
+    `[generate:readme] README updated with ${apis.length} APIs, ${playgroundApiIds.size} playground links, and ${turkeyFocusedApiIdSet.size} Turkey-focused APIs.`,
   );
 }
 
