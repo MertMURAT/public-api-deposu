@@ -108,5 +108,13 @@
   "urun-barkod-api",
   "arkapi",
   "dahi-ai",
-  "kantesti-blood-test-analysis-api"
+  "kantesti-blood-test-analysis-api",
+  "balikesir-acik-veri-platformu",
+  "bursa-acik-yesil-platformu",
+  "kadikoy-acik-veri-portali",
+  "manisa-acik-veri-platformu",
+  "nilufer-acik-veri-portali",
+  "ordu-acik-veri-portali",
+  "sakarya-acik-veri-portali",
+  "sarj-dev-api"
 ]

@@ -4,7 +4,7 @@
 
 A curated list of APIs from the main catalog that directly target Turkish institutions, companies, or Türkiye-specific data and products.
 
-[![APIs for Türkiye](https://img.shields.io/badge/Turkiye-110%20APIs-dc2626)](./turkey-focused-apis.md)
+[![APIs for Türkiye](https://img.shields.io/badge/Turkiye-118%20APIs-dc2626)](./turkey-focused-apis.md)
 [![Main Catalog](https://img.shields.io/badge/catalog-418%20APIs-0a7ea4)](../README.md)
 [![Playground Links](https://img.shields.io/badge/playground-398%20links-1f8f5f)](https://apideposu.com/en/playground)
 
@@ -17,12 +17,12 @@ A curated list of APIs from the main catalog that directly target Turkish instit
 
 ## Categories
 
-- [Public Data (46)](#public)
+- [Public Data (53)](#public)
 - [Finance (20)](#finance)
 - [Logistics (4)](#logistics)
 - [Ecommerce (5)](#ecommerce)
 - [Communication (13)](#communication)
-- [Maps (3)](#maps)
+- [Maps (4)](#maps)
 - [Identity (3)](#identity)
 - [Business (13)](#business)
 - [AI (3)](#ai)
@@ -36,6 +36,8 @@ A curated list of APIs from the main catalog that directly target Turkish instit
 | **Ankara EGO Hareket Saatleri**<br><sub>[Docs](https://www.ego.gov.tr/hareketsaatleri) &middot; [Detail](https://apideposu.com/en/catalog/ankara-ego)</sub> | Ankara EGO bus departure times, queryable by route number. | No | Free | &#10003; |
 | **Antalya Ulaşım Tarifeleri**<br><sub>[Docs](https://ulasim.antalya.bel.tr/Home/TarifeListesi) &middot; [Detail](https://apideposu.com/en/catalog/antalya-ulasim)</sub> | Antalya public transit timetable and stop data. | No | Free | &#10003; |
 | **Ataturk Quotes API**<br><sub>[Docs](https://github.com/msrkc/ataturk-quotes-api) &middot; [Test](https://apideposu.com/en/playground?api=ataturk-quotes-api) &middot; [Detail](https://apideposu.com/en/catalog/ataturk-quotes-api)</sub> | Returns random Ataturk quotes in TR and EN via a lightweight community API. | No | Free | - |
+| **Balikesir Acik Veri Platformu**<br><sub>[Docs](https://acikveri.balikesir.bel.tr/) &middot; [Detail](https://apideposu.com/en/catalog/balikesir-acik-veri-platformu)</sub> | Balikesir Metropolitan Municipality CKAN-based open data platform exposing package and datastore endpoints. | Open | Free | &#10003; |
+| **Bursa Acik Yesil Platformu**<br><sub>[Docs](https://acikyesil.bursa.bel.tr/) &middot; [Test](https://apideposu.com/en/playground?api=bursa-acik-yesil-platformu) &middot; [Detail](https://apideposu.com/en/catalog/bursa-acik-yesil-platformu)</sub> | Bursa Metropolitan Municipality CKAN-based open green platform exposing package listing and dataset metadat... | Open | Free | &#10003; |
 | **CollectAPI Dictionary**<br><sub>[Docs](https://docs.collectapi.com/docs) &middot; [Test](https://apideposu.com/en/playground?api=collectapi-dictionary) &middot; [Detail](https://apideposu.com/en/catalog/collectapi-dictionary)</sub> | Turkish and English dictionary lookup endpoints via CollectAPI. | API Key | Limited | &#10003; |
 | **Deprem Verileri – Topluluk API**<br><sub>[Docs](https://api.orhanaydogdu.com.tr/deprem) &middot; [Test](https://apideposu.com/en/playground?api=earthquake-orhan) &middot; [Detail](https://apideposu.com/en/catalog/earthquake-orhan)</sub> | An unofficial community service aggregating AFAD and Kandilli feeds. Not an official data source; no guaran... | Open | Limited | - |
 | **DergiPark API**<br><sub>[Docs](https://dergipark.org.tr/api/public/oai/) &middot; [Test](https://apideposu.com/en/playground?api=dergipark) &middot; [Detail](https://apideposu.com/en/catalog/dergipark)</sub> | DergiPark exposes journal and article metadata via OAI-PMH endpoints. | Open | Free | &#10003; |
@@ -61,13 +63,18 @@ A curated list of APIs from the main catalog that directly target Turkish instit
 | **İzmir ESHOT GTFS Verileri**<br><sub>[Docs](https://acikveri.bizizmir.com/dataset/toplu-ulasim-gtfs-verileri) &middot; [Test](https://apideposu.com/en/playground?api=izmir-eshot-gtfs) &middot; [Detail](https://apideposu.com/en/catalog/izmir-eshot-gtfs)</sub> | Izmir ESHOT public transit GTFS data, downloadable from the Izmir Open Data Portal. | No | Free | &#10003; |
 | **Izmir IZSU Water Services (Open Data)**<br><sub>[Docs](https://openfiles.izmir.bel.tr/309436/docs/izsu-WebServisKullanimDokumani_1.0.pdf) &middot; [Test](https://apideposu.com/en/playground?api=izmir-izsu-water-services-open-data) &middot; [Detail](https://apideposu.com/en/catalog/izmir-izsu-water-services-open-data)</sub> | Official IZSU open-data services returning JSON for water outages, dam status, production, analyses, branch... | Open | Free | &#10003; |
 | **İzmir Nöbetçi Eczane (Açık Veri)**<br><sub>[Docs](https://acikveri.bizizmir.com/tr/dataset/nobetci-eczaneler-ve-eczane-listesi) &middot; [Test](https://apideposu.com/en/playground?api=izmir-nobetci-eczane) &middot; [Detail](https://apideposu.com/en/catalog/izmir-nobetci-eczane)</sub> | Izmir municipality open data service providing JSON for on-duty pharmacies and pharmacy listings. | Open | Free | &#10003; |
+| **Kadikoy Acik Veri Portali**<br><sub>[Docs](https://acikveri.kadikoy.bel.tr/) &middot; [Test](https://apideposu.com/en/playground?api=kadikoy-acik-veri-portali) &middot; [Detail](https://apideposu.com/en/catalog/kadikoy-acik-veri-portali)</sub> | Kadikoy Municipality CKAN-based open data portal exposing package and datastore endpoints for queryable dat... | Open | Free | &#10003; |
 | **Kandilli Son Depremler**<br><sub>[Docs](http://www.koeri.boun.edu.tr/scripts/lst0.asp) &middot; [Test](https://apideposu.com/en/playground?api=kandilli-deprem) &middot; [Detail](https://apideposu.com/en/catalog/kandilli-deprem)</sub> | Fetches earthquake data from Kandilli Observatory’s web page. Not an official API; requires HTML parsing an... | Open | Free | &#10003; |
 | **Kayseri Nöbetçi Eczane (Açık Veri)**<br><sub>[Docs](https://acikveri.kayseri.bel.tr/veri-seti/eczane-bilgileri/11) &middot; [Test](https://apideposu.com/en/playground?api=kayseri-nobetci-eczane) &middot; [Detail](https://apideposu.com/en/catalog/kayseri-nobetci-eczane)</sub> | Kayseri municipality open data service providing JSON for on-duty pharmacies. | Open | Free | &#10003; |
 | **Kocaeli GTFS Verileri**<br><sub>[Docs](https://veri.kocaeli.bel.tr/dataset/toplu-ulasim-verisi) &middot; [Test](https://apideposu.com/en/playground?api=kocaeli-gtfs) &middot; [Detail](https://apideposu.com/en/catalog/kocaeli-gtfs)</sub> | Kocaeli public transit GTFS data, downloadable from the Kocaeli Open Data Portal. | No | Free | &#10003; |
 | **Konya GTFS Verileri**<br><sub>[Docs](https://acikveri.konya.bel.tr/dataset/groups/toplu-tasima-gtfs-verileri) &middot; [Test](https://apideposu.com/en/playground?api=konya-gtfs) &middot; [Detail](https://apideposu.com/en/catalog/konya-gtfs)</sub> | Konya public transit GTFS data, downloadable from the Konya Open Data Portal. | No | Free | &#10003; |
+| **Manisa Acik Veri Platformu**<br><sub>[Docs](https://acikveri.manisa.bel.tr/) &middot; [Detail](https://apideposu.com/en/catalog/manisa-acik-veri-platformu)</sub> | Manisa Metropolitan Municipality CKAN-based open data platform exposing package listing and dataset metadat... | Open | Free | &#10003; |
 | **Mersin Ulaşım Tarifeleri**<br><sub>[Docs](https://ulasim.mersin.bel.tr/geneltarifeler.php) &middot; [Detail](https://apideposu.com/en/catalog/mersin-ulasim)</sub> | Mersin public transit general schedules and route-based schedule list. | No | Free | &#10003; |
 | **Namaz Vakitleri API**<br><sub>[Docs](https://ezanvakti.emushaf.net/docs) &middot; [Test](https://apideposu.com/en/playground?api=ezan-vakti-api) &middot; [Detail](https://apideposu.com/en/catalog/ezan-vakti-api)</sub> | A third-party service providing prayer times based on Diyanet data. Not an official Diyanet API. | Open | Free | - |
+| **Nilufer Acik Veri Portali**<br><sub>[Docs](https://acikveri.nilufer.bel.tr/) &middot; [Detail](https://apideposu.com/en/catalog/nilufer-acik-veri-portali)</sub> | Nilufer Municipality CKAN-based open data portal exposing package and datastore endpoints. | Open | Free | &#10003; |
 | **ODTÜ FTP**<br><sub>[Docs](https://ftp.metu.edu.tr/) &middot; [Test](https://apideposu.com/en/playground?api=metu-ftp) &middot; [Detail](https://apideposu.com/en/catalog/metu-ftp)</sub> | Provides access to public files and archives published via METU FTP. | Open | Free | &#10003; |
+| **Ordu Acik Veri Portali**<br><sub>[Docs](https://acikveri.ordu.bel.tr/) &middot; [Detail](https://apideposu.com/en/catalog/ordu-acik-veri-portali)</sub> | Ordu Metropolitan Municipality CKAN-based open data portal exposing package and datastore endpoints. | Open | Free | &#10003; |
+| **Sakarya Acik Veri Portali**<br><sub>[Docs](https://veri.sakarya.bel.tr/) &middot; [Test](https://apideposu.com/en/playground?api=sakarya-acik-veri-portali) &middot; [Detail](https://apideposu.com/en/catalog/sakarya-acik-veri-portali)</sub> | Sakarya Metropolitan Municipality CKAN-based open data portal exposing package and datastore endpoints. | Open | Free | &#10003; |
 | **Samsun SAMULAŞ Otobüs Bilgileri**<br><sub>[Docs](https://samulas.com.tr/otobusler) &middot; [Detail](https://apideposu.com/en/catalog/samsun-samulas)</sub> | Samsun SAMULAS route-based departure times and bus information. | No | Free | &#10003; |
 | **TCMB Daily Exchange Rates (XML)**<br><sub>[Docs](https://www.tcmb.gov.tr/kurlar/today.xml) &middot; [Test](https://apideposu.com/en/playground?api=tcmb-kurlar-xml) &middot; [Detail](https://apideposu.com/en/catalog/tcmb-kurlar-xml)</sub> | Official TCMB daily foreign exchange rates XML feed. | Open | Free | &#10003; |
 | **TCMB EVDS**<br><sub>[Docs](https://evds2.tcmb.gov.tr/help/videos/EVDS_Web_Servis_Kullanim_Kilavuzu.pdf) &middot; [Test](https://apideposu.com/en/playground?api=tcmb-evds) &middot; [Detail](https://apideposu.com/en/catalog/tcmb-evds)</sub> | Turkiye's most comprehensive economic data service with rich time series. | API Key | Free | &#10003; |
@@ -146,6 +153,7 @@ A curated list of APIs from the main catalog that directly target Turkish instit
 |:---|:---|:---|:---|:---:|
 | **Başarsoft BMS**<br><sub>[Docs](https://www.basarsoft.com.tr/en/basar-map-server-smart-map-server-service/) &middot; [Test](https://apideposu.com/en/playground?api=basarsoft-bms) &middot; [Detail](https://apideposu.com/en/catalog/basarsoft-bms)</sub> | One of the highest-quality local map data providers for Türkiye. | API Key | Paid | &#10003; |
 | **Burulaş**<br><sub>[Docs](https://www.bursakart.com.tr/wheremybus) &middot; [Test](https://apideposu.com/en/playground?api=burula) &middot; [Detail](https://apideposu.com/en/catalog/burula)</sub> | Burulaş Web API | Origin header (bursakart.com.tr) | Free | &#10003; |
+| **sarj.dev API**<br><sub>[Docs](https://api.sarj.dev/swagger-ui/index.html) &middot; [Test](https://apideposu.com/en/playground?api=sarj-dev-api) &middot; [Detail](https://apideposu.com/en/catalog/sarj-dev-api)</sub> | Turkey-focused charging station search API with unauthenticated provider list, search, and station detail e... | Open | Free | &#10003; |
 | **Şehir Haritası API (İBB)**<br><sub>[Docs](https://harita.istanbul/) &middot; [Test](https://apideposu.com/en/playground?api=ibb-sehir-haritasi) &middot; [Detail](https://apideposu.com/en/catalog/ibb-sehir-haritasi)</sub> | Provides panorama services from the IBB City Map stack for nearby location views. | Open | Free | &#10003; |
 
 ## Identity
