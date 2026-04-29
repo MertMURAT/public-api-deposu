@@ -10,9 +10,9 @@
 
 Browse public APIs with direct links to docs, Test Lab, and API Deposu detail pages.
 
-[![Catalog APIs](https://img.shields.io/badge/catalog-418%20APIs-0a7ea4)](https://apideposu.com/en/catalog)
+[![Catalog APIs](https://img.shields.io/badge/catalog-419%20APIs-0a7ea4)](https://apideposu.com/en/catalog)
 [![APIs for Türkiye](https://img.shields.io/badge/Turkiye-118%20APIs-dc2626)](./docs/turkey-focused-apis.md)
-[![Playground Links](https://img.shields.io/badge/playground-398%20links-1f8f5f)](https://apideposu.com/en/playground)
+[![Playground Links](https://img.shields.io/badge/playground-399%20links-1f8f5f)](https://apideposu.com/en/playground)
 [![Support](https://img.shields.io/badge/donate-buy%20me%20a%20coffee-ffdd00)](https://buymeacoffee.com/apideposu)
 [![Issues](https://img.shields.io/badge/issues-feedback-d97706)](https://github.com/MertMURAT/public-api-deposu/issues)
 
@@ -38,7 +38,7 @@ APIs marked with <img src="./assets/tr-flag-icon.svg" width="18" alt="" /> belon
 - [Ecommerce (6)](#ecommerce)
 - [Communication (16)](#communication)
 - [Maps (14)](#maps)
-- [Identity (3)](#identity)
+- [Identity (4)](#identity)
 - [Business (20)](#business)
 - [AI (9)](#ai)
 - [Monitoring (1)](#monitoring)
@@ -458,6 +458,7 @@ APIs marked with <img src="./assets/tr-flag-icon.svg" width="18" alt="" /> belon
 |:---|:---|:---|:---|:---:|
 | <img src="./assets/tr-flag-icon.svg" width="16" alt="" /> **NVİ KPS (KPS Public)**<br><sub>[Docs](https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx) &middot; [Detail](https://apideposu.com/en/catalog/nvi-kps)</sub> | NVİ KPS Public SOAP service for institutional identity verification and registry checks. | SOAP / IP Whitelist | Unknown | &#10003; |
 | <img src="./assets/tr-flag-icon.svg" width="16" alt="" /> **OptimalScan AML/KYC**<br><sub>[Docs](https://optimalscan.com/en/) &middot; [Test](https://apideposu.com/en/playground?api=optimalscan) &middot; [Detail](https://apideposu.com/en/catalog/optimalscan)</sub> | Local AML/KYC solution aligned with KVKK and MASAK compliance. | API + Dashboard | Trial | &#10003; |
+| **Turkey Validation & Enrichment API**<br><sub>[Docs](https://apideposu.com/en/catalog/tr-validation) &middot; [Test](https://apideposu.com/en/playground?api=tr-validation) &middot; [Detail](https://apideposu.com/en/catalog/tr-validation)</sub> | API Deposu's Turkey-specific form validation API. It provides IBAN checksum, phone normalization, TCKN/VKN... | API Deposu API Key | Limited | &#10003; |
 | <img src="./assets/tr-flag-icon.svg" width="16" alt="" /> **TÜRKTRUST e-İmza**<br><sub>[Docs](https://www.turktrust.com.tr/) &middot; [Test](https://apideposu.com/en/playground?api=turktrust) &middot; [Detail](https://apideposu.com/en/catalog/turktrust)</sub> | Local e-signature provider used across public and private sectors. | Kurumsal sertifika | Paid | &#10003; |
 
 ## Business
