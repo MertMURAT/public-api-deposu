@@ -546,6 +546,12 @@ If this catalog saves you time, you can support maintenance and new curation wor
 
 - [Buy Me a Coffee](https://buymeacoffee.com/apideposu)
 
+## Acknowledgements
+
+One of the early references for API Deposu was [Önder Ertan](https://github.com/3rt4nm4n)'s [Turkish APIs](https://github.com/3rt4nm4n/turkish-apis) repository (MIT), which served as one of the starting points for the initial Türkiye-focused entries in the catalog. API Deposu has since grown into a separate product, independently maintained and verified.
+
+Thanks to Önder Ertan and the developer community for their contributions.
+
 ## Project Files
 
 - [Contributing Guide](./CONTRIBUTING.md)
